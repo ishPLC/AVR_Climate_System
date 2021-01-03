@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8">
+  
+	<title> AVR climate regulation system </title>
+  	<title> ish </title>	  
+ </head>
+
+ <body>
+	
+	<center><h1> AVR climate regulation system (SW and HW)</h1>
+	<center><h1> using AT84 & AT85 microcontrollers (AVR) </h1>
+	
+
+	
+	<center><h3> Climate Control main scheme </h3>
+	<p><img src="i/01.jpg" alt="nodata"></p>
+	
+		
+	<p>  </p>
+	<center><h3> Simulator of the Climate Control </h3>	
+	<p><img src="i/02.GIF" alt="nodata"></p>
+	
+	<p>  </p>	
+	<center><h3> ADC n T Converter (Simulator) </h3>
+	<p><img src="i/03.JPG" alt="nodata"></p>
+
+AVR climate regulator system (SW and HW)
+using AT84 and AT85 microcontrollers.
+<p>  </p>
+Climate control system for passengers of a car, railway carriage, bus, etc.
+<p>  </p>
+I developed the climate control circuit and software based on the AT84 and AT85 AVR microcontrollers.
+<p>  </p>
+<center><h3>A brief description of how the circuit works. </h3>
+1. The cabin contains an NTC 4K7 temperature sensor that measures the climate in the passenger area of ​​the vehicle.
+<p>  </p>
+2. This temperature sensor is connected to the analog input of the AT84 microcontroller.
+<p>  </p>
+3. A change in temperature causes a change in ADC at the AT84 input.
+<p>  </p>
+4. The passenger chooses a comfortable cabin temperature using one button on the control panel. The button works cyclically, each pressing of this button leads to a change in the setting to the next upward value: 18 - 20 - 22 - 24 degrees C. And so on. Temperature indicators (LED 1 - 4) indicate the selected temperature.
+<p>  </p>
+5. To set the temperature, an AT85 microcontroller with 4 LEDs is used. This control panel also generates reference voltages for a second microcontroller, which adjusts the interior temperature according to the passenger's selected temperature.
+<p>  </p>
+6. The logic of the first AT85 microcontroller provides 4 reference logic signals on the second AT84 microcontroller, and the indication of the temperature selected by the passenger.
+<p>  </p>
+7. The logic of the second microcontroller provides climate control according to the value selected by the passenger.
+The output of the second AT84 microcontroller is connected to two transistors operating in a key mode (closed / open), which connect the line or cold or warm air. It is also additionally possible to use a third key cascade, which will turn on an additional air conditioner at temperatures above 26 degrees C.
+<p>  </p>
+8. Additionally, I used a temperature status data link (Serial RS232) which can be used for commissioning or integrated into RS485, CAN, TCP \ IP, etc.
+<p>  </p>
+9. Microcontroller programs are written in C language.
+<p>  </p>
+10. Additional software for commissioning and diagnostics developed in RAD Studio C ++ Builder (Prof. ver. named lic.).
+This is a complete simulator that allows you to simulate the algorithm of the circuit, as well as to control parameters via the RS232 protocol in real time. The first window of the program is a serial terminal, which takes data from the second AT84 microcontroller and saves it as a report. The second window is ADC Converter, the third window is a virtual simulator. There are also additional windows containing help information on microcontrollers, etc. (The program is under development). New versions and their description will appear in the future.
+<p>  </p>
+Development: I. Shaturnyi (C) 2020
+	
+<!-- video  Page in develop... -->
+	
+<!-- A-P 16POINTS  -->
+
+	<center><h3> AVR climate regulator system </h3>
+	<center><h5> I.Shaturny ishPLC © 2020 </h5>
+	<a href="mailto:ishplcprog@gmail.com">ishplcprog@gmail.com</a></p>
+	<center><h5> 2020.11.01 </h5>
+	<p>  </p>
+	<center><h5>Page in develop...</h5>
+    <a href="mailto:ishplc@seznam.cz">ishplc@seznam.cz</a></p>
+	<script language="javascript" type="text/javascript">
+	var d = new Date();
+
+	var day=new Array("Sun","Mon","Tue",
+	"Wdn","Thr","Fr","Std");
+
+	var month=new Array("jan","feb","mar","apr","may","jun",
+	"jul","aug","sent","oct","nov","dec");
+
+	document.write(day[d.getDay()]+" " +d.getDate()+ " " + month[d.getMonth()]
+	+ " " + d.getFullYear() + "");
+	</script>
+
+
+
+<!-- I.Shaturny  <ishPLC©2019>-->
+<!-- git.11.2019 ver.7 >-->
+
+
+ </body>
+</html>
